@@ -119,7 +119,7 @@ export const EdDSAPoseidonFactory = (algorithm: SupportedHashingAlgorithms) => {
 
     /**
      * Verifies an EdDSA signature using the Baby Jubjub elliptic curve and Poseidon hash function.
-     * @param message The original message that was be signed.
+     * @param message The original message that was signed.
      * @param signature The EdDSA signature to be verified.
      * @param publicKey The public key associated with the private key used to sign the message.
      * @returns Returns true if the signature is valid and corresponds to the message and public key, false otherwise.

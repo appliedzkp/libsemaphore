@@ -65,7 +65,7 @@ export default function run(treeDepth: number, numberOfLeaves: number) {
     let leafIMT = 0
     let leafLeanIMT = 0
     let leafSMT = 0
-    /*  Number of leafs to take as sample to benchmark.
+    /*  Number of leaves to take as sample to benchmark.
         It acts as a limit to stop doing the operation (delete) or restart the cycle
         counter controller (update, proof, verification) in a benchmark since
         the benny suite does not have the method to limit the maximum of operations
