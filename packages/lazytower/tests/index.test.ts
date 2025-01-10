@@ -120,7 +120,7 @@ describe("LazyTowerHashChainProofBuilder", () => {
         expect(fun2).toThrow("Parameter 'hash' is none of these types: function")
     })
 
-    it("Should not add a item in a full tower", () => {
+    it("Should not add an item in a full tower", () => {
         const pb = LazyTowerHashChainProofBuilder(2, 3, hash)
         for (let i = BigInt(0); i < 12; i += BigInt(1)) {
             pb.add(i)

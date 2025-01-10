@@ -43,7 +43,7 @@ export default class IMT {
     private readonly _arity: number
 
     /**
-     * It initializes the tree with an hash function, the depth, the zero value to use for zeroes
+     * It initializes the tree with a hash function, the depth, the zero value to use for zeroes
      * and the arity (i.e. the number of children for each node). It also takes an optional parameter
      * to initialize the tree with a list of leaves.
      * @param hash The hash function used to create nodes.

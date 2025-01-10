@@ -69,7 +69,7 @@ export function LazyTowerHashChainProofBuilder(H: number, W: number, hash = defa
     }
 
     /**
-     * Returns the index of a item. If the item does not exist it returns -1.
+     * Returns the index of an item. If the item does not exist it returns -1.
      * @param item Added item.
      * @returns Index of the item.
      */

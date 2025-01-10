@@ -193,7 +193,7 @@ export function bigNumberishToBuffer(value: BigNumberish): Buffer {
 }
 
 /**
- * Converts an hexadecimal string to a buffer. The hexadecimal string
+ * Converts a hexadecimal string to a buffer. The hexadecimal string
  * should not start with '0x' or '0X'. It keeps the bytes in the same order.
  * @param value The hexadecimal string to convert.
  * @returns The buffer representation of the hexadecimal string.

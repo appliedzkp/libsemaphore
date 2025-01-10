@@ -13,7 +13,7 @@ import { ChildNodes, EntryMark, HashFunction, Key, Value, Node, Siblings, EntryR
  * * **leaf nodes**: every leaf node is the hash of a key/value pair and an additional
  * value to mark the node as leaf node (`H(x, y, 1)`);
  * * **entry**: a tree entry is a key/value pair used to create the leaf nodes;
- * * **zero nodes**: a zero node is an hash of zeros and in this implementation `H(0,0) = 0`;
+ * * **zero nodes**: a zero node is a hash of zeros and in this implementation `H(0,0) = 0`;
  * * **siblings**: the children of a parent node are siblings;
  * * **path**: every entry key is a number < 2^256 that can be converted in a binary number,
  * and this binary number is the path used to place the entry in the tree (1 or 0 define the
