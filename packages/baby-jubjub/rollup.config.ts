@@ -16,7 +16,7 @@ const banner = `/**
  * @see [Github]{@link ${pkg.homepage}}
 */`
 
-const name = pkg.name.split("/")[1].replace(/[-/]./g, (x: string) => x.toUpperCase()[1])
+const name = pkg.name.split("/")[1].replace(/[-/]./g, (x: string) => x.slice(1).toUpperCase())
 
 export default [
     {
