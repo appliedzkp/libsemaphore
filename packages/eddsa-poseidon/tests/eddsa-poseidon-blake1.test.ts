@@ -138,6 +138,30 @@ describe("EdDSAPoseidon", () => {
         expect(fun).toThrow(`Parameter 'message' is none of the following types: bignumberish, string`)
     })
 
+    it("Should throw an error if the message is larger than 32 Bytes [string]", async () => {
+        const message = "abcdefghijklmnopqrstuvwxyz1234567"
+
+        const fun = () => signMessage(privateKey, message)
+
+        expect(fun).toThrow(`Message length is larger than 32 bytes`)
+    })
+
+    it("Should throw an error if the message is larger than 32 Bytes [number]", async () => {
+        const message = 2 ** 255
+
+        const fun = () => signMessage(privateKey, message)
+
+        expect(fun).toThrow(`Message length is larger than 32 bytes`)
+    })
+
+    it("Should throw an error if the message is larger than 32 Bytes [-number]", async () => {
+        const message = -(2n ** 255n + 1n)
+
+        const fun = () => signMessage(privateKey, message)
+
+        expect(fun).toThrow(`Message length is larger than 32 bytes`)
+    })
+
     it("Should verify a signature (numeric)", async () => {
         const publicKey = derivePublicKey(privateKey)
         const signature = signMessage(privateKey, message)

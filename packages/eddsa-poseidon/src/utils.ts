@@ -59,18 +59,21 @@ export function checkPrivateKey(privateKey: Buffer | Uint8Array | string): Buffe
 }
 
 /**
- * Validates and converts a BigNumberish message to a bigint.
+ * Validates and converts a BigNumberish message to a bigint. Ensures the message size does not exceed 32 bytes.
  * @param message The message to check and convert.
  * @returns The message as a bigint.
  */
 export function checkMessage(message: BigNumberish): bigint {
     requireTypes(message, "message", ["bignumberish", "string"])
 
-    if (isBigNumberish(message)) {
-        return bigNumberishToBigInt(message)
-    }
+    const bigIntMessage = isBigNumberish(message)
+        ? bigNumberishToBigInt(message)
+        : bufferToBigInt(Buffer.from(message as string))
 
-    return bufferToBigInt(Buffer.from(message as string))
+    const maxLength = 2n ** 256n / 2n
+    if (bigIntMessage < maxLength * -1n || bigIntMessage >= maxLength)
+        throw new Error(`Message length is larger than 32 bytes`)
+    return bigIntMessage
 }
 
 /**
